@@ -4,7 +4,7 @@
     <router-link to="/">
         1
     </router-link>
-    <router-link to="/x">
+    <router-link to="/Doc">
         2
     </router-link>
 </div>
@@ -17,4 +17,8 @@ export default {
     name: 'App',
 
 }
+</script>
+
+<script>
+    export default {}
 </script>
