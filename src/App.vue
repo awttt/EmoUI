@@ -1,21 +1,16 @@
 <template>
-<div>
-    导航栏
-    <router-link to="/">
-        1
-    </router-link>
-    <router-link to="/Doc">
-        2
-    </router-link>
-</div>
-<hr />
+
 <router-view />
 </template>
 
-<script>
+<script lang='ts'>
+import { ref, provide } from 'vue'
 export default {
     name: 'App',
-
+setup(){
+    const menuVisible = ref(false)
+    provide('menuVisible',menuVisible)
+}
 }
 </script>
 
