@@ -1,0 +1,20 @@
+<template>
+<div>
+    导航栏
+    <router-link to="/">
+        1
+    </router-link>
+    <router-link to="/x">
+        2
+    </router-link>
+</div>
+<hr />
+<router-view />
+</template>
+
+<script>
+export default {
+    name: 'App',
+
+}
+</script>
