@@ -3,7 +3,7 @@
   Button 示例
   </div>
   <h1>示例1</h1>
-  <div>
+  <div class="wrap" >
     <Button >按钮</Button>
     <Button theme='button'>按钮</Button>
     <Button theme='link'>按钮</Button>
@@ -23,4 +23,13 @@ export default {
     return {onClick}
   }
 }
-</script>>
+</script>
+
+<style >
+.wrap{
+  display: flex;
+  justify-content: space-around;
+}
+
+
+</style>
