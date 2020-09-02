@@ -1,11 +1,11 @@
 <template>
-<div>
+
     <button class='gulu-button'
     :class="`gulu-theme-${theme}`"
     >
         <slot/>
     </button>
-    </div>
+    
 </template>
 
 <script lang='ts'>
@@ -52,6 +52,22 @@ $radius: 4px;
   }
   &::-moz-focus-inner {
     border: 0;
+  }
+    &.gulu-theme-link{
+    border-color: transparent;
+    box-shadow: none;
+    color: $blue;
+    &:hover,&:focus{
+      color: lighten($blue, 10%);
+    }
+  }
+  &.gulu-theme-text{
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    &:hover,&:focus{
+      background: darken(white, 5%);;
+    }
   }
 }
 </style>

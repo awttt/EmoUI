@@ -26,10 +26,7 @@ export default {
 </script>
 
 <style >
-.wrap{
-  display: flex;
-  justify-content: space-around;
-}
+
 
 
 </style>
