@@ -1,14 +1,14 @@
 <template>
     <template v-if="visible"> 
-        <div @click="onClickOverlay" class='gulu-dialog-overlay'></div>
+      <Teleport to='body'>  
+ <div @click="onClickOverlay" class='gulu-dialog-overlay'></div>
         <div class='gulu-dialog-wrapper'>
             <div class="gulu-dialog">
-            <header>标题
+            <header> <slot name='title'/>
                 <span @click="close" class="gulu-dialog-close"></span>
             </header>
             <main>
-                <p>1</p>
-                <p>2</p>
+                <slot name='content'/>
             </main>
             <footer>
                 <Button @click="ok" level="main">OK</Button>
@@ -16,6 +16,8 @@
             </footer>
         </div>
         </div>
+        </Teleport> 
+       
     </template>
 </template>
 
@@ -23,6 +25,7 @@
 import Button from './Button.vue'
 export default {
     props:{
+        
     visible:{
         type:Boolean,
         default:false
@@ -58,7 +61,7 @@ close()
            }
         }
         const cancel =()=>{
-            context.emit('cancel')
+            props.cancel?.()
             close()
         }
           return {
