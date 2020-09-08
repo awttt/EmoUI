@@ -2,6 +2,7 @@
   <div class="layout">
     <Topnav class="nav" />
     <div class="content">
+      <transition name="bounce">
       <aside v-if="menuVisible">
         <h2>组件列表</h2>
         <ol>
@@ -17,8 +18,12 @@
           <li>
             <router-link to="/doc/tabs">Tabs 组件</router-link>
           </li>
+           <li>
+            <router-link to="/doc/input">Input 组件</router-link>
+          </li>
         </ol>
       </aside>
+      </transition>
       <main>
         <router-view />
       </main>
@@ -41,6 +46,21 @@ export default {
 
 
 <style lang="scss" scoped>
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+.bounce-leave-active {
+  animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: translateX(-150px);
+  }
+  
+  100% {
+    transform: translateX(0);
+  }
+}
 .layout {
   display: flex;
   flex-direction: column;
